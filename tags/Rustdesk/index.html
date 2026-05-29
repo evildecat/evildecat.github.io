@@ -1,0 +1,515 @@
+<!doctype html>
+
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#f7f3e9">
+<title>evildecat</title>
+
+
+<script>
+  (function () {
+    var accents = { green: 1, pink: 1, blue: 1, orange: 1, sakura: 1 };
+    var match = document.cookie.match(/(?:^|;\s*)flatpaper-accent=([^;]+)/);
+    var accent = match ? decodeURIComponent(match[1]) : 'green';
+    if (!accents[accent]) accent = 'green';
+    document.documentElement.setAttribute('data-accent', accent);
+    try {
+      if (localStorage.getItem('flatpaper-mode') === 'dark') {
+        document.documentElement.classList.add('dark-mode');
+      }
+    } catch (e) {}
+  })();
+</script>
+
+<link rel="stylesheet" href="/css/style.css">
+
+
+  
+
+  
+
+  
+
+  
+
+  
+<meta name="generator" content="Hexo 8.1.2"><link rel="alternate" href="/atom.xml" title="evildecat" type="application/atom+xml">
+</head>
+
+<body
+  class="is-list tag-style-tape"
+  data-default-accent="green"
+  data-code-theme="dark"
+  data-note-style="flat"
+  data-note-icons="on"
+>
+  <div class="page-grain"></div>
+  <header class="site-header">
+  
+  <button class="icon-button js-sidebar-toggle sidebar-toggle" type="button" aria-label="打开侧边栏" aria-controls="paper-sidebar-drawer" aria-expanded="false">
+    
+<svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-menu" aria-hidden="true"><path d="M4 12h16"/><path d="M4 6h16"/><path d="M4 18h16"/></svg>
+
+  </button>
+
+  <a class="brand" href="/" aria-label="FlatPaper home">
+    <span class="brand-mark" aria-hidden="true">
+<svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-leaf" aria-hidden="true"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19.2 2.96a1 1 0 0 1 1.6.8c0 3-.6 7.74-4.16 11.31-2.66 2.66-6.74 3.99-9.65 3.99"/><path d="M2 21c0-3 1.85-5.36 5.08-6"/></svg>
+</span>
+    <span class="brand-text">evildecat</span>
+  </a>
+
+  <nav class="site-nav" aria-label="Primary navigation">
+    
+      
+        <a class="site-nav-link " href="/">
+          
+<svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-home" aria-hidden="true"><path d="m3 10 9-7 9 7"/><path d="M5 10v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V10"/><path d="M9 21v-6h6v6"/></svg>
+
+          <span>首页</span>
+        </a>
+      
+    
+      
+        <a class="site-nav-link " href="/archives/">
+          
+<svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-archive" aria-hidden="true"><rect width="20" height="5" x="2" y="3" rx="1"/><path d="M4 8v11a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8"/><path d="M10 12h4"/></svg>
+
+          <span>归档</span>
+        </a>
+      
+    
+      
+        <a class="site-nav-link " href="/about/">
+          
+<svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-link" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+
+          <span>关于</span>
+        </a>
+      
+    
+  </nav>
+
+  <div class="header-tools">
+    <button class="icon-button js-search-open" type="button" aria-label="搜索文章">
+      
+<svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-search" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+
+    </button>
+    <div class="accent-picker">
+      <button class="icon-button accent-toggle" type="button" aria-label="选择主题色" title="选择主题色" aria-haspopup="true" aria-expanded="false" aria-controls="accent-menu">
+        
+<svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-palette" aria-hidden="true"><circle cx="13.5" cy="6.5" r=".5" fill="currentColor"/><circle cx="17.5" cy="10.5" r=".5" fill="currentColor"/><circle cx="8.5" cy="7.5" r=".5" fill="currentColor"/><circle cx="6.5" cy="12.5" r=".5" fill="currentColor"/><path d="M12 2C6.5 2 2 5.9 2 10.8c0 3.3 2.7 6 6 6h1.2c.8 0 1.4.6 1.4 1.4 0 .4-.2.8-.2 1.2 0 .8.6 1.6 1.6 1.6 5.5 0 10-4.2 10-9.4C22 6.3 17.5 2 12 2Z"/></svg>
+
+      </button>
+      <div class="accent-menu" id="accent-menu" role="menu" aria-label="主题色">
+        <button type="button" class="accent-option" role="menuitemradio" aria-label="绿色" aria-checked="false" data-accent-option="green">
+          <span class="accent-swatch accent-swatch--green" aria-hidden="true"></span>
+        </button>
+        <button type="button" class="accent-option" role="menuitemradio" aria-label="粉色" aria-checked="false" data-accent-option="pink">
+          <span class="accent-swatch accent-swatch--pink" aria-hidden="true"></span>
+        </button>
+        <button type="button" class="accent-option" role="menuitemradio" aria-label="樱花粉" aria-checked="false" data-accent-option="sakura">
+          <span class="accent-swatch accent-swatch--sakura" aria-hidden="true"></span>
+        </button>
+        <button type="button" class="accent-option" role="menuitemradio" aria-label="蓝色" aria-checked="false" data-accent-option="blue">
+          <span class="accent-swatch accent-swatch--blue" aria-hidden="true"></span>
+        </button>
+        <button type="button" class="accent-option" role="menuitemradio" aria-label="橙色" aria-checked="false" data-accent-option="orange">
+          <span class="accent-swatch accent-swatch--orange" aria-hidden="true"></span>
+        </button>
+      </div>
+    </div>
+    <button class="theme-toggle" type="button" aria-label="切换颜色模式">
+      <span class="theme-icon theme-icon--sun">
+<svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-sun" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>
+</span>
+      <span class="theme-icon theme-icon--moon">
+<svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-moon" aria-hidden="true"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
+</span>
+    </button>
+  </div>
+</header>
+
+
+  
+  <main class="paper-shell ">
+    
+
+<aside id="paper-sidebar-drawer" class="paper-sidebar paper-sidebar--right" aria-label="侧边栏">
+  <button class="icon-button drawer-close js-sidebar-close" type="button" aria-label="关闭侧边栏">
+    
+<svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-x" aria-hidden="true"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+
+  </button>
+
+  <section class="side-card nav-card">
+    <nav class="site-nav-drawer" aria-label="移动端导航">
+      
+        
+          <a class="" href="/">
+            
+<svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-home" aria-hidden="true"><path d="m3 10 9-7 9 7"/><path d="M5 10v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V10"/><path d="M9 21v-6h6v6"/></svg>
+
+            <span>首页</span>
+          </a>
+        
+      
+        
+          <a class="" href="/archives/">
+            
+<svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-archive" aria-hidden="true"><rect width="20" height="5" x="2" y="3" rx="1"/><path d="M4 8v11a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8"/><path d="M10 12h4"/></svg>
+
+            <span>归档</span>
+          </a>
+        
+      
+        
+          <a class="" href="/about/">
+            
+<svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-link" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+
+            <span>关于</span>
+          </a>
+        
+      
+    </nav>
+  </section>
+
+  <section class="side-card profile-card">
+    
+      <div class="avatar avatar--image">
+        <img src="/avatar.png" alt="evildecat" loading="lazy" referrerpolicy="no-referrer">
+      </div>
+    
+    <h3>evildecat</h3>
+    <p class="profile-role">日常记录</p>
+    <p>写写想被别人记住的部分。</p>
+    
+    <div class="socials">
+      
+      
+        <a href="/atom.xml" aria-label="RSS feed" title="RSS">
+          
+<svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-rss" aria-hidden="true"><path d="M4 11a9 9 0 0 1 9 9"/><path d="M4 4a16 16 0 0 1 16 16"/><circle cx="5" cy="19" r="1"/></svg>
+
+        </a>
+      
+    </div>
+  </section>
+
+  
+    <section class="side-card categories-card">
+      <h2>
+<svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-folder" aria-hidden="true"><path d="M20 20a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.93a2 2 0 0 1-1.66-.9l-.82-1.2A2 2 0 0 0 7.93 3H4a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2Z"/></svg>
+分类</h2>
+      
+        <a href="/categories/%E8%B7%AF%E7%94%B1%E5%99%A8/">
+          <span class="dot dot-0"></span>
+          <strong>路由器</strong>
+          <em>1</em>
+        </a>
+      
+    </section>
+
+    <section class="side-card tag-card">
+      <header class="tag-card__head">
+        <h2>
+<svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-flame" aria-hidden="true"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/></svg>
+热门标签</h2>
+        <a class="tag-card__more" href="/tags/">
+          <span>查看全部</span>
+          
+<svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+
+        </a>
+      </header>
+      <div class="tag-cloud">
+        
+        
+          <a class="tag-chip tag-chip-0" href="/tags/OpenWRT/">OpenWRT</a>
+        
+          <a class="tag-chip tag-chip-1" href="/tags/Rustdesk/">Rustdesk</a>
+        
+          <a class="tag-chip tag-chip-2" href="/tags/Windows11/">Windows11</a>
+        
+          <a class="tag-chip tag-chip-3" href="/tags/webp/">webp</a>
+        
+          <a class="tag-chip tag-chip-4" href="/tags/%E7%9B%B8%E5%A3%B0/">相声</a>
+        
+          <a class="tag-chip tag-chip-5" href="/tags/git/">git</a>
+        
+          <a class="tag-chip tag-chip-0" href="/tags/wget/">wget</a>
+        
+      </div>
+    </section>
+  
+
+  
+
+</aside>
+
+    <section class="paper-main">
+      
+<section class="archive-paper">
+  <h1>Rustdesk</h1>
+  <div class="archive-list">
+    
+      <a class="archive-item" href="/2026/05/29/rustdesk-hdr-sdr/">
+        <span>2026-05-29</span>
+        <strong>Rustdesk使用HDR/SDR过曝临时解决</strong>
+        <em></em>
+      </a>
+    
+      <a class="archive-item" href="/2026/05/29/rustdesk-change-id/">
+        <span>2026-05-29</span>
+        <strong>Rustdesk自定义ID</strong>
+        <em></em>
+      </a>
+    
+  </div>
+</section>
+
+
+
+
+      
+
+
+    </section>
+    
+      <aside class="paper-sidebar paper-sidebar--left">
+  
+  
+
+  <section class="side-card recent-card" data-random-posts-limit="5">
+    <h2>
+<svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shuffle" aria-hidden="true"><path d="m18 14 4 4-4 4"/><path d="m18 2 4 4-4 4"/><path d="M2 18h1.4c1.3 0 2.5-.6 3.3-1.7l6.6-8.6C14.1 6.6 15.2 6 16.6 6H22"/><path d="M2 6h1.9c.9 0 1.8.4 2.4 1.1l1.4 1.8"/><path d="M22 18h-5.4c-1.3 0-2.5-.6-3.3-1.7l-.5-.7"/></svg>
+随机文章</h2>
+    <ul class="recent-list js-random-posts">
+      
+        <li>
+          <a class="recent-item" href="/2026/05/29/openwrt-easytier/">
+            <strong>OpenWRT通过Easytier异地组网</strong>
+            <em>2026-05-29</em>
+          </a>
+        </li>
+      
+        <li>
+          <a class="recent-item" href="/2026/05/29/rustdesk-hdr-sdr/">
+            <strong>Rustdesk使用HDR/SDR过曝临时解决</strong>
+            <em>2026-05-29</em>
+          </a>
+        </li>
+      
+        <li>
+          <a class="recent-item" href="/2026/05/29/rustdesk-change-id/">
+            <strong>Rustdesk自定义ID</strong>
+            <em>2026-05-29</em>
+          </a>
+        </li>
+      
+        <li>
+          <a class="recent-item" href="/2026/05/27/ae-animation-export2webp/">
+            <strong>ae动图导出webp</strong>
+            <em>2026-05-27</em>
+          </a>
+        </li>
+      
+        <li>
+          <a class="recent-item" href="/2026/05/27/log-yuqiandebaba/">
+            <strong>于谦的爸爸</strong>
+            <em>2026-05-27</em>
+          </a>
+        </li>
+      
+    </ul>
+    <script type="application/json" class="js-random-posts-data">
+    [
+    
+      {
+        "title": "OpenWRT通过Easytier异地组网",
+        "url": "/2026/05/29/openwrt-easytier/",
+        "date": "2026-05-29"
+      },
+    
+      {
+        "title": "Rustdesk使用HDR/SDR过曝临时解决",
+        "url": "/2026/05/29/rustdesk-hdr-sdr/",
+        "date": "2026-05-29"
+      },
+    
+      {
+        "title": "Rustdesk自定义ID",
+        "url": "/2026/05/29/rustdesk-change-id/",
+        "date": "2026-05-29"
+      },
+    
+      {
+        "title": "ae动图导出webp",
+        "url": "/2026/05/27/ae-animation-export2webp/",
+        "date": "2026-05-27"
+      },
+    
+      {
+        "title": "于谦的爸爸",
+        "url": "/2026/05/27/log-yuqiandebaba/",
+        "date": "2026-05-27"
+      },
+    
+      {
+        "title": "Windows11开机自动登录netplwiz修复",
+        "url": "/2026/05/27/win-auto-login/",
+        "date": "2026-05-27"
+      },
+    
+      {
+        "title": "git快速本地迁移",
+        "url": "/2026/05/27/git-migrate/",
+        "date": "2026-05-27"
+      },
+    
+      {
+        "title": "wget使用方法",
+        "url": "/2026/05/27/wget-use-help/",
+        "date": "2026-05-27"
+      },
+    
+      {
+        "title": "Windows11绕过账户联网激活",
+        "url": "/2026/05/27/win11-bypass-nro/",
+        "date": "2026-05-27"
+      },
+    
+      {
+        "title": "OpenWRT为NetgearR6800重新分区并构建镜像",
+        "url": "/2026/05/27/openwrt-build-netgear-R6800/",
+        "date": "2026-05-27"
+      }
+    
+    ]
+    </script>
+  </section>
+
+
+</aside>
+
+    
+  </main>
+
+  <div class="sidebar-backdrop js-sidebar-close" aria-hidden="true"></div>
+
+  
+<footer class="site-footer">
+  <span class="site-footer__left">© 2026 By evildecat</span>
+  <span class="site-footer__right">Powered by Theme <a href="https://github.com/Homulilly/hexo-theme-flatpaper" target="_blank" rel="noopener">FlatPaper</a></span>
+</footer>
+
+  <div class="search-panel" aria-hidden="true">
+  <div class="search-backdrop js-search-close"></div>
+  <section class="search-dialog" role="dialog" aria-modal="true" aria-label="搜索文章">
+    <span class="tape tape--top-left" aria-hidden="true"></span>
+    <header class="search-head">
+      <h2><span class="green-dot"></span>搜索文章</h2>
+      <button class="icon-button js-search-close" type="button" aria-label="关闭搜索">
+        
+<svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-x" aria-hidden="true"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+
+      </button>
+    </header>
+    <label class="search-field">
+      
+<svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-search" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+
+      <input id="flatpaper-search" class="search-input" type="search" placeholder="输入关键词，按 Esc 关闭" autocomplete="off">
+    </label>
+    <div class="search-results" data-empty="输入关键词后显示匹配的文章">
+      <p class="search-empty">输入关键词后显示匹配的文章</p>
+    </div>
+  </section>
+</div>
+
+<script type="application/json" id="flatpaper-post-index">
+[
+
+  {
+    "title": "OpenWRT通过Easytier异地组网",
+    "url": "/2026/05/29/openwrt-easytier/",
+    "date": "2026-05-29",
+    "text": "背景我有两台OpenWRT,其中一台拥有公网IP,这一台作为主节点 服务端参考命令 不要直接使用 12345678910111213141516171819202122232425/usr/bin/easytier-core \\ --network-name easytier \\ --network-secret 这里填写密码 \\ # 这里填写一个唯一IP -i 10.14.14.1 \\ # 这里"
+  },
+
+  {
+    "title": "Rustdesk使用HDR/SDR过曝临时解决",
+    "url": "/2026/05/29/rustdesk-hdr-sdr/",
+    "date": "2026-05-29",
+    "text": "最近在使用HDMI亮度调节软件时，我偶然发现HDR亮度可以调节。调整亮度后，RustDesk视图看起来更正常，不再受到过度曝光的影响。我还没有尝试过DP接口，但它也可能工作。https://github.com/xanderfrangos/twinkle-tray"
+  },
+
+  {
+    "title": "Rustdesk自定义ID",
+    "url": "/2026/05/29/rustdesk-change-id/",
+    "date": "2026-05-29",
+    "text": "rustdesk-id-change注意你可以通过自己修改代码实现自定义ID,但是我不会提供任何教程,我认为那是挑衅官方的行为,开源不易且用且珍惜ID如果在hhbs数据库内已存在可能无法注册。rustdesk&#x2F;hbbs&#x2F;data&#x2F;db_v2.sqlite3默认服务器不允许修改ID，需要使用自建服务器。修改ID前把RustDesk客户端全部关闭。 win自定义ID找到这"
+  },
+
+  {
+    "title": "ae动图导出webp",
+    "url": "/2026/05/27/ae-animation-export2webp/",
+    "date": "2026-05-27",
+    "text": "引言我记得当时是为了做web的背景动画被迫使用了webp,gif无法实现,默认导出的webp又不能用,不过最后还是研究出来了。 过程123456789101112131.打开ae,添加到导出渲染队列2.队列视频输出模块选择 格式: QuickTime 通道: RAB+Alpha (此处需要选择格式选项) 格式选项-&gt; 视频编码器: 动画 深度: 数百万种以上颜色 颜色: 预乘 关闭音频输出3"
+  },
+
+  {
+    "title": "于谦的爸爸",
+    "url": "/2026/05/27/log-yuqiandebaba/",
+    "date": "2026-05-27",
+    "text": "一看一乐,非原创 123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081于谦的爸爸王老爷子姓孙名叫李秀珍号欧阳青松人称罩百灵。也叫于小谦、于得水、于"
+  },
+
+  {
+    "title": "Windows11开机自动登录netplwiz修复",
+    "url": "/2026/05/27/win-auto-login/",
+    "date": "2026-05-27",
+    "text": "修复Windows似乎刻意隐藏了要使用本计算机,用户必须输入用户名和密码所有我们正常进入netplwiz是看不到这个选项的，所有需要执行一下netplwiz修复.reg进行注册表修复，修复完成后就可以正常操作了。 修复前 修复后"
+  },
+
+  {
+    "title": "git快速本地迁移",
+    "url": "/2026/05/27/git-migrate/",
+    "date": "2026-05-27",
+    "text": ""
+  },
+
+  {
+    "title": "wget使用方法",
+    "url": "/2026/05/27/wget-use-help/",
+    "date": "2026-05-27",
+    "text": "wget命令1.断点续传1wget -c http://127.0.0.1/1.txt 2.后台传输1wget -b http://127.0.0.1/1.txt 3.递归下载12345678wget -r http://127.0.0.1/files#这个命令会按照递归的方法，下载服务器上所有的目录和文件，实质就是下载整个网站。#这个命令一定要小心使用，因为在下载的时候，被下载网站指向的所有地址"
+  },
+
+  {
+    "title": "Windows11绕过账户联网激活",
+    "url": "/2026/05/27/win11-bypass-nro/",
+    "date": "2026-05-27",
+    "text": "引言Windows11在新安装系统后总是需要账户联网激活，下面是绕过方法 注意不要插网线 开始进入到还原界面后直接按Shift+F10打开CMD,输入oobe\\BypassNRO.cmd回车,系统会自动重启。重启完成后既可以直接设置本地用户了。此处设置用户可以不设置密码，进入系统后再添加密码就不用填写乱七八糟的密保了。"
+  },
+
+  {
+    "title": "OpenWRT为NetgearR6800重新分区并构建镜像",
+    "url": "/2026/05/27/openwrt-build-netgear-R6800/",
+    "date": "2026-05-27",
+    "text": "引言先解释一下为什么要分区。默认情况下，固件打包时会将 rootfs_data（即 overlay）的大小硬编码在镜像中。 即使你的闪存芯片有 128MB 或 256MB，如果镜像配置只分了 40MB 给 overlay，那剩下的空间就处于“物理存在但不可使用”的状态。正常官方构建的镜像可用的overlay只有25MB左右，如果想装一个Xary根本不够，所以需要重新分区。 构建步骤注：不要使用ro"
+  }
+
+]
+</script>
+
+  
+<script src="/js/main.js"></script>
+
+  
+</body>
+</html>
